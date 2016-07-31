@@ -1,0 +1,25 @@
+{
+  "name": "fb-messenger",
+  "version": "1.0.0",
+  "description": "Webhook handler for FACEBOOK messenger API",
+  "main": "main.js",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshitanand/FacebookMessenger-Node.git"
+  },
+  "keywords": [
+    "chat-bot"
+  ],
+  "author": "Harshit Anand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshitanand/FacebookMessenger-Node/issues"
+  },
+  "homepage": "https://github.com/harshitanand/FacebookMessenger-Node#readme",
+  "dependencies": {
+    "coffee-script": "^1.10.0"
+  }
+}
