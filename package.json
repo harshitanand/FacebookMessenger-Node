@@ -1,5 +1,5 @@
 {
-  "name": "fb-messenger",
+  "name": "Node-FacebookMessenger",
   "version": "1.0.0",
   "description": "Webhook handler for FACEBOOK messenger API",
   "main": "main.js",
