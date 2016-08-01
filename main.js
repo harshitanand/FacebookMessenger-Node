@@ -1,30 +1,27 @@
+"use strict"
 require('coffee-script/register')
-validateHook = require('./helpers/validate')
-readData = require('./helpers/readMessage')
-sendMessage = require('./helpers/sendMessage')
+var validateHook = require('./helpers/validate')
+var readData = require('./helpers/readMessage')
+//var sendMessage = require('./helpers/sendMessage')
 
-class FBMessenger {
+var messenger = function FBMessenger(token){
+  this.token = token
+}
   
-  constructor (token) {
-    this.token = token
-  }
-
-  validate (msg, verif_token, callback){
-    validateHook.validate(msg, verif_token, function(err, data){
-      if(err)
-        callback(err)
-      callback(null, data)
-    })
-  }
-
-  read (msg, callback){
-    readData.read(msg, function(err, data){
-      if(err)
-        callback(err)
-      callback(null, data)
-    })
-  }
-
+messenger.prototype.validate = function (msg, verif_token, callback){
+  validateHook.validate(msg, verif_token, function(err, data){
+    if(err)
+      return callback(err)
+    return callback(null, data)
+  })
 }
 
-export default FBMessenger
+messenger.prototype.read = function (msg, callback){
+  readData.read(msg, function(err, data){
+    if(err)
+      return callback(err)
+    return callback(null, data)
+  })
+}
+
+module.exports = new messenger()
